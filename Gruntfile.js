@@ -21,7 +21,7 @@ module.exports = function (grunt) {
 
     uglify: {
       options: {
-        banner: '/* Paperdocs ' + grunt.file.readJSON('package.json').version + ' by Francisco Presencia - MIT - https://github.com/franciscop/paperdocs */\n'
+        banner: '/* Paperdocs v' + grunt.file.readJSON('package.json').version + ' by Francisco Presencia - MIT - https://github.com/franciscop/paperdocs */\n\n',
       },
       my_target: {
         files: {
@@ -37,7 +37,7 @@ module.exports = function (grunt) {
         linebreak: true
       },
       files: {
-        src: [ './paperdocs.js', './paperdocs.min.css' ]
+        src: [ './paperdocs.min.css' ]
       }
     },
 
@@ -89,7 +89,6 @@ module.exports = function (grunt) {
           'paperdocs.js': [
             './node_modules/prismjs/prism.js',
             './node_modules/umbrellajs/umbrella.min.js',
-            './node_modules/superdom/superdom.min.js',
             './node_modules/marked/marked.min.js',
             './src/paperdocs.js',
           ]
@@ -114,8 +113,8 @@ module.exports = function (grunt) {
     bytesize: {
       all: {
         src: [
-          'public/style.css',
-          'public/javascript.js'
+          'paperdocs.min.css',
+          'paperdocs.min.js'
         ]
       }
     }
@@ -130,7 +129,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-bytesize');
   grunt.loadNpmTasks('grunt-banner');
 
-  grunt.registerTask('build', ['concat', 'sass', 'usebanner', 'pug']);
+  grunt.registerTask('build', ['concat', 'sass', 'uglify', 'usebanner', 'pug']);
   grunt.registerTask('test', ['semistandard', 'bytesize']);
-  grunt.registerTask('default', ['pug', 'build']);
+  grunt.registerTask('default', ['pug', 'build', 'bytesize']);
 };
