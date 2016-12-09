@@ -12,7 +12,8 @@ html.initial
     meta(property='og:description' content='A beautiful and highly responsible theme for documentation')
 
     link(href='https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css' rel='stylesheet')
-    link(href='paperdocs.min.css' rel='stylesheet')
+    block style
+      link(href='../paperdocs.min.css' rel='stylesheet')
 
   block body
     body.homepage
@@ -21,5 +22,6 @@ html.initial
   
     block content
 
-    script(src='paperdocs.min.js')
+    block script
+      script(src='../paperdocs.min.js')
     script(src="//localhost:35729/livereload.js")

@@ -3,3 +3,9 @@ extends layout
 block content
   article
     include:marked ../README.md
+
+block style
+  link(href='paperdocs.min.css' rel='stylesheet')
+
+block script
+  script(src='paperdocs.min.js')
