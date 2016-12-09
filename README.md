@@ -74,7 +74,7 @@ There are a couple of things to note here:
 
 [**Live demo**](http://francisco.io/paperdocs/single):
 
-[![Single column layout](/img/single_column.png)](http://francisco.io/paperdocs/single)
+[![Single column layout](img/single_column.png)](http://francisco.io/paperdocs/single)
 
 This is the current layout, a single column. The most important element is the `<article>`, to load a page like this do:
 
@@ -124,6 +124,9 @@ You can also load it *server-side* and just put the HTML inside the article, whi
 > Important: you also have to set the class `withaside` to the body:
 
 [See example](http://francisco.io/paperdocs/aside):
+
+![Paperdocs with aside](img/aside_desktop.png)
+
 
 ```html
 <body class="withaside">
