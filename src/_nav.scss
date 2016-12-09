@@ -51,7 +51,6 @@ nav.super {
     }
 
     .button {
-      width: auto;
       padding: .3em .9em;
       margin: 0;
       transition: box-shadow .3s ease;
@@ -60,6 +59,12 @@ nav.super {
         margin-right: 10px;
       }
     }
+  }
+}
+
+@media all and (min-width: 900px) {
+  footer .button {
+    width: auto;
   }
 }
 
