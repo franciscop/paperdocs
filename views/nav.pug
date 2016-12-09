@@ -1,0 +1,24 @@
+nav.super
+  a.brand(href='/')
+    i.logo.fa.fa-file-text-o
+    span.text Paperdocs
+  input#bmenu.show(type='checkbox')
+  label.burger.pseudo.button.switch(for='bmenu')
+  header
+    strong Server.js
+  .menu(data-headers='h1, h2')
+    ul.flex.one
+  footer
+    .flex.three
+      a.pseudo.button(href='/tests')
+        i.fa.fa-check
+        | Tests
+      //- Space between the buttons
+      = ' '
+      a.pseudo.button(href='https://github.com/serverjs/server', target='_blank')
+        i.fa.fa-github-alt
+        | Github
+      = ' '
+      a.button(href='/documentation')
+        i.fa.fa-file-text-o
+        | Documentation
