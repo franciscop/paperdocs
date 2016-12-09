@@ -68,7 +68,7 @@ module.exports = function (grunt) {
         files: [ {
           cwd: 'views',
           src: '**/*.html.pug',
-          dest: './examples',
+          dest: '.',
           expand: true,
           ext: '.html'
         }, {
