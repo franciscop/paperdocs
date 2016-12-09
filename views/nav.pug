@@ -1,7 +1,8 @@
 nav.super
   a.brand(href='/')
     i.logo.fa.fa-file-text-o
-    span.text Paperdocs
+    block brandname
+      span.text Paperdocs
   input#bmenu.show(type='checkbox')
   label.burger.pseudo.button.switch(for='bmenu')
   header
@@ -22,3 +23,7 @@ nav.super
       a.button(href='/documentation')
         i.fa.fa-file-text-o
         | Documentation
+      = ' '
+      a.button(href='/bla')
+        i.fa.fa-file-text-o
+        | Bla

@@ -42,10 +42,12 @@ To get this awesome menu, use this html:
   <label for="bmenu" class="burger pseudo button switch"></label>
 
   <header><strong>Umbrella JS</strong></header>
-  <div class="menu loading" data-headers="h2"><ul class="flex two three-600"></ul></div>
+  <div class="menu loading" data-headers="h2">
+    <ul class="flex two three-600"></ul>
+  </div>
 
   <footer>
-    <div class="flex three">
+    <div class="flex">
       <a class="pseudo button" href="/tests">
         <i class="fa fa-check"></i> Tests
       </a>
@@ -62,8 +64,9 @@ To get this awesome menu, use this html:
 
 There are a couple of things to note here:
 
-- The first div inside `<footer>` has the class `flex three`. You must adjust this acording to the number of buttons that you have inside it.
 - The `.menu.loading` has an attribute called `data-headers="h2"`. This represents what kind of headings will be parsed and make it into the menu. You can adjust it to `data-headers="h1, h2"`, `data-headers="h2, h3"`, etc as you prefer.
+- The bottom menu on mobile will get its width according to their content (with flexbox). To force a specific width, add the corresponding class to the first `<div>` inside `<footer>` [according to Picnic CSS' grid system](picnicss.com/documentation#grids).
+- Similarly, you can set the drop-down menu to more than 1 column if there are too many sections as you can see in [Umbrella JS](http://umbrellajs.com/documentation). For this, set the corresponding class [according to Picnic CSS grid system](picnicss.com/documentation#grids) to the `<ul>` inside `.menu`.
 
 
 
@@ -86,9 +89,9 @@ This is the current layout, a single column. The most important element is the `
 
     <link href="https://unpkg.com/paperdocs@1/paperdocs.min.css" rel="stylesheet">
   </head>
-  <body class="withaside">
+  <body>
 
-    <!-- <nav> seen above -->
+    <!-- <nav> goes here -->
 
     <article class="loading" data-src="documentation.md"></article>
 
@@ -102,116 +105,81 @@ It will load the content from `documentation.md` (markdown) and then render it a
 You can also load it *server-side* and just put the HTML inside the article, which will be rendered properly. Don't forget to remove all the attributes in that situation:
 
 ```html
-<article>
-  <h1>Documentation</h1>
-  ...
-</article>
+<body>
+  <!-- <nav> goes here -->
+
+  <article>
+    <h1>Documentation</h1>
+    ...
+  </article>
+
+  <!-- include the library's js here -->
+</body>
 ```
 
 
 
 ## Create a side menu
 
-[See example](/)
+> Important: you also have to set the class `withaside` to the body:
+
+[See example](http://francisco.io/paperdocs/aside):
+
+```html
+<body class="withaside">
+  <!-- <nav> goes here -->
+
+  <aside data-headers="h1, h2">
+    <ul></ul>
+  </aside>
+
+  <article>
+    <h1>Documentation</h1>
+    ...
+  </article>
+
+  <!-- include the library's js here -->
+</body>
+```
 
 
-a
 
-a
+## Import markdown
 
-a
+There are three possible cases for setting the source for the documentation:
 
-a
+### Server-side render
 
-a
+If you are using some templating system such as `pug` (previously `jade`), then the best way is that you parse the markdown straight on the back-end (or on compile-time) so Google and other spiders can see it straight away:
 
-a
+```pug
+article
+  include:marked ../README.md
+```
 
-a
+> To have `:marked` available in pug/jade you'll have to install previously the package `jstransformer-marked`
 
-a
+In this way, the server is sending a pure-html file so everything works well. Te client-side javascript will handle the Tables of Content including the `<nav>` and the syntax highlighting.
 
-a
+### Client-side load
 
-a
+You can specify to load a markdown file this way:
 
-a
+```html
+<article class="loading" data-src="README.md"></article>
+```
 
-a
-
-a
-
-a
-
-a
-
-a
-
-a
-
-a
-
-a
-
-a
-
-a
-
-a
-
-a
-
-a
-
-## Second section
+It will load the file `README.md`, parse it into HTML and embed it inside the article. The class `loading` is optional, but it will show a nice spinner while the documentation is loading.
 
 
-a
+### Client-side render
 
-a
+This has many problems so it's not recommended but might still be useful for some people. Basically, you cannot include any html tag in the markdown in this way or the browser will screw you over by rendering it too soon. But you can do:
 
-a
+```html
+<article class="common-mark">
+  # Documentation
 
-a
-
-a
-
-a
-
-a
-
-a
-
-a
-
-a
-
-a
-
-a
-
-a
-
-a
-
-a
-
-a
-
-a
-
-a
-
-a
-
-a
-
-a
-
-a
-
-a
-
-a
-
-## Third section
+  This is some cool documentation for my package.
+</article>
+```

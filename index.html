@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="initial"><head><title>Paperdocs</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="keywords" content="theme, documentation, picnic, picnic css, javascript"><meta name="description" content="A beautiful and highly responsible theme for documentation"><meta property="og:url" content="https://github.com/franciscop/paperdocs"><meta property="og:title" content="Paperdocs"><!-- <meta property="og:image" content="http://umbrellajs.com/web/umbrella.png?1">--><meta property="og:description" content="A beautiful and highly responsible theme for documentation"><link href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" rel="stylesheet"><link href="paperdocs.min.css" rel="stylesheet"></head><body class="homepage"><nav class="super"><a class="brand" href="/"><i class="logo fa fa-file-text-o"></i><span class="text">Paperdocs</span></a><input class="show" id="bmenu" type="checkbox"><label class="burger pseudo button switch" for="bmenu"></label><header><strong>Server.js</strong></header><div class="menu" data-headers="h1, h2"><ul class="flex one"></ul></div><footer><div class="flex three"><a class="pseudo button" href="/tests"><i class="fa fa-check"></i>Tests</a> <a class="pseudo button" href="https://github.com/serverjs/server" target="_blank"><i class="fa fa-github-alt"></i>Github</a> <a class="button" href="/documentation"><i class="fa fa-file-text-o"></i>Documentation</a></div></footer></nav></body><aside data-headers="h1, h2"><ul></ul></aside><article><h1 id="paperdocs">Paperdocs</h1>
+<!DOCTYPE html><html class="initial"><head><title>Paperdocs</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="keywords" content="theme, documentation, picnic, picnic css, javascript"><meta name="description" content="A beautiful and highly responsible theme for documentation"><meta property="og:url" content="https://github.com/franciscop/paperdocs"><meta property="og:title" content="Paperdocs"><!-- <meta property="og:image" content="http://umbrellajs.com/web/umbrella.png?1">--><meta property="og:description" content="A beautiful and highly responsible theme for documentation"><link href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" rel="stylesheet"><link href="paperdocs.min.css" rel="stylesheet"></head><body class="homepage"><nav class="super"><a class="brand" href="/"><i class="logo fa fa-file-text-o"></i><span class="text">Paperdocs</span></a><input class="show" id="bmenu" type="checkbox"><label class="burger pseudo button switch" for="bmenu"></label><header><strong>Server.js</strong></header><div class="menu" data-headers="h1, h2"><ul class="flex one"></ul></div><footer><div class="flex three"><a class="pseudo button" href="/tests"><i class="fa fa-check"></i>Tests</a> <a class="pseudo button" href="https://github.com/serverjs/server" target="_blank"><i class="fa fa-github-alt"></i>Github</a> <a class="button" href="/documentation"><i class="fa fa-file-text-o"></i>Documentation</a> <a class="button" href="/bla"><i class="fa fa-file-text-o"></i>Bla</a></div></footer></nav></body><aside data-headers="h1, h2"><ul></ul></aside><article><h1 id="paperdocs">Paperdocs</h1>
 <p>A beautiful and highly responsible theme for documentation:</p>
 <pre><code class="lang-html">&lt;link src=&quot;https://unpkg.com/paperdocs@1/paperdocs.min.css&quot; rel=&quot;stylesheet&quot;&gt;
 &lt;script src=&quot;https://unpkg.com/paperdocs@1/paperdocs.min.js&quot;&gt;&lt;/script&gt;
@@ -28,10 +28,12 @@
   &lt;label for=&quot;bmenu&quot; class=&quot;burger pseudo button switch&quot;&gt;&lt;/label&gt;
 
   &lt;header&gt;&lt;strong&gt;Umbrella JS&lt;/strong&gt;&lt;/header&gt;
-  &lt;div class=&quot;menu loading&quot; data-headers=&quot;h2&quot;&gt;&lt;ul class=&quot;flex two three-600&quot;&gt;&lt;/ul&gt;&lt;/div&gt;
+  &lt;div class=&quot;menu loading&quot; data-headers=&quot;h2&quot;&gt;
+    &lt;ul class=&quot;flex two three-600&quot;&gt;&lt;/ul&gt;
+  &lt;/div&gt;
 
   &lt;footer&gt;
-    &lt;div class=&quot;flex three&quot;&gt;
+    &lt;div class=&quot;flex&quot;&gt;
       &lt;a class=&quot;pseudo button&quot; href=&quot;/tests&quot;&gt;
         &lt;i class=&quot;fa fa-check&quot;&gt;&lt;/i&gt; Tests
       &lt;/a&gt;
@@ -47,8 +49,9 @@
 </code></pre>
 <p>There are a couple of things to note here:</p>
 <ul>
-<li>The first div inside <code>&lt;footer&gt;</code> has the class <code>flex three</code>. You must adjust this acording to the number of buttons that you have inside it.</li>
 <li>The <code>.menu.loading</code> has an attribute called <code>data-headers=&quot;h2&quot;</code>. This represents what kind of headings will be parsed and make it into the menu. You can adjust it to <code>data-headers=&quot;h1, h2&quot;</code>, <code>data-headers=&quot;h2, h3&quot;</code>, etc as you prefer.</li>
+<li>The bottom menu on mobile will get its width according to their content (with flexbox). To force a specific width, add the corresponding class to the first <code>&lt;div&gt;</code> inside <code>&lt;footer&gt;</code> <a href="picnicss.com/documentation#grids">according to Picnic CSS&#39; grid system</a>.</li>
+<li>Similarly, you can set the drop-down menu to more than 1 column if there are too many sections as you can see in <a href="http://umbrellajs.com/documentation">Umbrella JS</a>. For this, set the corresponding class <a href="picnicss.com/documentation#grids">according to Picnic CSS grid system</a> to the <code>&lt;ul&gt;</code> inside <code>.menu</code>.</li>
 </ul>
 <h2 id="single-column">Single column</h2>
 <p><a href="http://francisco.io/paperdocs/single"><strong>Live demo</strong></a>:</p>
@@ -64,9 +67,9 @@
 
     &lt;link href=&quot;https://unpkg.com/paperdocs@1/paperdocs.min.css&quot; rel=&quot;stylesheet&quot;&gt;
   &lt;/head&gt;
-  &lt;body class=&quot;withaside&quot;&gt;
+  &lt;body&gt;
 
-    &lt;!-- &lt;nav&gt; seen above --&gt;
+    &lt;!-- &lt;nav&gt; goes here --&gt;
 
     &lt;article class=&quot;loading&quot; data-src=&quot;documentation.md&quot;&gt;&lt;/article&gt;
 
@@ -76,61 +79,59 @@
 </code></pre>
 <p>It will load the content from <code>documentation.md</code> (markdown) and then render it as html inside this article and remove the spinner.</p>
 <p>You can also load it <em>server-side</em> and just put the HTML inside the article, which will be rendered properly. Don&#39;t forget to remove all the attributes in that situation:</p>
-<pre><code class="lang-html">&lt;article&gt;
-  &lt;h1&gt;Documentation&lt;/h1&gt;
-  ...
-&lt;/article&gt;
+<pre><code class="lang-html">&lt;body&gt;
+  &lt;!-- &lt;nav&gt; goes here --&gt;
+
+  &lt;article&gt;
+    &lt;h1&gt;Documentation&lt;/h1&gt;
+    ...
+  &lt;/article&gt;
+
+  &lt;!-- include the library&#39;s js here --&gt;
+&lt;/body&gt;
 </code></pre>
 <h2 id="create-a-side-menu">Create a side menu</h2>
-<p><a href="/">See example</a></p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<h2 id="second-section">Second section</h2>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<h2 id="third-section">Third section</h2>
+<blockquote>
+<p>Important: you also have to set the class <code>withaside</code> to the body:</p>
+</blockquote>
+<p><a href="http://francisco.io/paperdocs/aside">See example</a>:</p>
+<pre><code class="lang-html">&lt;body class=&quot;withaside&quot;&gt;
+  &lt;!-- &lt;nav&gt; goes here --&gt;
+
+  &lt;aside data-headers=&quot;h1, h2&quot;&gt;
+    &lt;ul&gt;&lt;/ul&gt;
+  &lt;/aside&gt;
+
+  &lt;article&gt;
+    &lt;h1&gt;Documentation&lt;/h1&gt;
+    ...
+  &lt;/article&gt;
+
+  &lt;!-- include the library&#39;s js here --&gt;
+&lt;/body&gt;
+</code></pre>
+<h2 id="import-markdown">Import markdown</h2>
+<p>There are three possible cases for setting the source for the documentation:</p>
+<h3 id="server-side-render">Server-side render</h3>
+<p>If you are using some templating system such as <code>pug</code> (previously <code>jade</code>), then the best way is that you parse the markdown straight on the back-end (or on compile-time) so Google and other spiders can see it straight away:</p>
+<pre><code class="lang-pug">article
+  include:marked ../README.md
+</code></pre>
+<blockquote>
+<p>To have <code>:marked</code> available in pug/jade you&#39;ll have to install previously the package <code>jstransformer-marked</code></p>
+</blockquote>
+<p>In this way, the server is sending a pure-html file so everything works well. Te client-side javascript will handle the Tables of Content including the <code>&lt;nav&gt;</code> and the syntax highlighting.</p>
+<h3 id="client-side-load">Client-side load</h3>
+<p>You can specify to load a markdown file this way:</p>
+<pre><code class="lang-html">&lt;article class=&quot;loading&quot; data-src=&quot;README.md&quot;&gt;&lt;/article&gt;
+</code></pre>
+<p>It will load the file <code>README.md</code>, parse it into HTML and embed it inside the article. The class <code>loading</code> is optional, but it will show a nice spinner while the documentation is loading.</p>
+<h3 id="client-side-render">Client-side render</h3>
+<p>This has many problems so it&#39;s not recommended but might still be useful for some people. Basically, you cannot include any html tag in the markdown in this way or the browser will screw you over by rendering it too soon. But you can do:</p>
+<pre><code class="lang-html">&lt;article class=&quot;common-mark&quot;&gt;
+  # Documentation
+
+  This is some cool documentation for my package.
+&lt;/article&gt;
+</code></pre>
 </article><script src="paperdocs.min.js"></script><script src="//localhost:35729/livereload.js"></script></html>
