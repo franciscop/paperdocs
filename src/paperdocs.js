@@ -12,10 +12,11 @@
       }).join(', ');
 
       u('[data-headers] ul, [data-headers] ol').html('\n        ' + u(selector).nodes.map(function (node) {
-        return '\n          <li class="' + (node.nodeName === 'H2' ? 'primary' : 'secondary') + '">\n            <a class="pseudo button" href="#' + node.id + '">\n              ' + node.innerHTML + '\n            </a>\n          </li>\n        ';
+        return '\n          <li class="from-' + node.nodeName.toLowerCase() + '">\n            <a class="pseudo button" href="#' + node.id + '">\n              ' + node.innerHTML + '\n            </a>\n          </li>\n        ';
       }).join('') + '\n      ');
     });
   };
+  tableofcontents();
 
   // Supermenu
   var supermenu = function supermenu() {
@@ -37,8 +38,6 @@
       u('nav > input').first().checked = false;
       u('body').removeClass('no-scroll');
 
-      console.log("Clicked");
-
       if (smoothscroll) {
         e.preventDefault();
         var to = u(u(e.currentTarget).attr('href'));
@@ -50,16 +49,12 @@
 
     // Change the title of the section
     var pagesize = u('body').size().height / 2;
-    var last = void 0;
+    var last;
     function setupSection() {
-      var current = u('article h2').filter(function (node) {
+      var current = u('article h1, article h2, article h3').filter(function (node) {
         return u(node).size().top < pagesize;
-      }).last() || u('h1').first();
-      var section = u(current).html() || u('h1').html();
-      if (u('h1').length && u('h1').size().top > 0 && u('h1').size().top < pagesize) {
-        section = u('h1').html();
-        var hash = u(current).attr('id');
-      }
+      }).last();
+      var section = u(current).html();
       if (!last || !current || current != last) {
         last = current;
         u('nav header').html(section);
@@ -72,6 +67,7 @@
     u(document).on('scroll', setupSection);
     setupSection();
   };
+  supermenu();
 
   if (u('aside').length) {
     u('body').addClass('withaside');
@@ -110,7 +106,6 @@
     el.innerHTML = marked(lines.map(function (l) {
       return l.slice(min);
     }).join('\n'));
+    tableofcontents();
   });
-
-  tableofcontents();
 })();

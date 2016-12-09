@@ -17,18 +17,13 @@ Include the two snippets above for the style and functionality of this page, inc
 
 ## Navigation menu
 
-The `<nav>` navigation menu will automatically render as a drop-down menu on mobile (try it by resizing this window), so your users will have the functionality they want there.
-
-This is how it looks on desktop (cut to make it fit here):
+The `<nav>` will automatically render as a drop-down menu on mobile (try it by resizing this window), so your users will have the functionality they want there. This is how it looks **on large screens**:
 
 ![Navigation menu on desktop](img/nav_desktop.png)
 
-This is the mobile version. **When you scroll on mobile the nav shows the current section**:
+And this is the mobile version. **When you scroll on mobile the nav shows the current section**:
 
-<div class="flex two">
-  <div><img src="img/nav_mobile_full.png" alt="Mobile navigation bar"></div>
-  <div><img src="img/nav_mobile_scroll_full.png" alt="Mobile navigation bar scrolled"></div>
-</div>
+![Navigation on mobile including scrolled down](img/nav_mobile_both.png)
 
 When clicking on the ☰, the menu drops down showing all available sections and the 2-4 buttons that were on the top-right before on the bottom:
 
@@ -67,14 +62,16 @@ To get this awesome menu, use this html:
 
 There are a couple of things to note here:
 
-- The first div inside `<footer>` has the class `flex three`. You must adjust this acording to the number of buttons you have inside.
+- The first div inside `<footer>` has the class `flex three`. You must adjust this acording to the number of buttons that you have inside it.
 - The `.menu.loading` has an attribute called `data-headers="h2"`. This represents what kind of headings will be parsed and make it into the menu. You can adjust it to `data-headers="h1, h2"`, `data-headers="h2, h3"`, etc as you prefer.
 
 
 
 ## Single column
 
-[See example](/single) (or this page)
+[**Live demo**](http://francisco.io/paperdocs/single):
+
+[![Single column layout](/img/single_column.png)](http://francisco.io/paperdocs/single)
 
 This is the current layout, a single column. The most important element is the `<article>`, to load a page like this do:
 

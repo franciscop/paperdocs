@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="initial"><head><title>Paperdocs</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="keywords" content="theme, documentation, picnic, picnic css, javascript"><meta name="description" content="A beautiful and highly responsible theme for documentation"><meta property="og:url" content="https://github.com/franciscop/paperdocs"><meta property="og:title" content="Paperdocs"><!-- <meta property="og:image" content="http://umbrellajs.com/web/umbrella.png?1">--><meta property="og:description" content="A beautiful and highly responsible theme for documentation"><link href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" rel="stylesheet"><link href="paperdocs.min.css" rel="stylesheet"></head><body class="homepage"><nav class="super"><a class="brand" href="/"><i class="logo fa fa-file-text-o"></i><span class="text">Paperdocs</span></a><input class="show" id="bmenu" type="checkbox"><label class="burger pseudo button switch" for="bmenu"></label><header><strong>Server.js</strong></header><div class="menu" data-headers="h1, h2"><ul class="flex one"></ul></div><footer><div class="flex three"><a class="pseudo button" href="/tests"><i class="fa fa-check"></i>Tests</a> <a class="pseudo button" href="https://github.com/serverjs/server" target="_blank"><i class="fa fa-github-alt"></i>Github</a> <a class="button" href="/documentation"><i class="fa fa-file-text-o"></i>Documentation</a></div></footer></nav></body><article><h1 id="paperdocs">Paperdocs</h1>
+<!DOCTYPE html><html class="initial"><head><title>Paperdocs</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="keywords" content="theme, documentation, picnic, picnic css, javascript"><meta name="description" content="A beautiful and highly responsible theme for documentation"><meta property="og:url" content="https://github.com/franciscop/paperdocs"><meta property="og:title" content="Paperdocs"><!-- <meta property="og:image" content="http://umbrellajs.com/web/umbrella.png?1">--><meta property="og:description" content="A beautiful and highly responsible theme for documentation"><link href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" rel="stylesheet"><link href="paperdocs.min.css" rel="stylesheet"></head><body class="homepage"><nav class="super"><a class="brand" href="/"><i class="logo fa fa-file-text-o"></i><span class="text">Paperdocs</span></a><input class="show" id="bmenu" type="checkbox"><label class="burger pseudo button switch" for="bmenu"></label><header><strong>Server.js</strong></header><div class="menu" data-headers="h1, h2"><ul class="flex one"></ul></div><footer><div class="flex three"><a class="pseudo button" href="/tests"><i class="fa fa-check"></i>Tests</a> <a class="pseudo button" href="https://github.com/serverjs/server" target="_blank"><i class="fa fa-github-alt"></i>Github</a> <a class="button" href="/documentation"><i class="fa fa-file-text-o"></i>Documentation</a></div></footer></nav></body><aside data-headers="h1, h2"><ul></ul></aside><article><h1 id="paperdocs">Paperdocs</h1>
 <p>A beautiful and highly responsible theme for documentation:</p>
 <pre><code class="lang-html">&lt;link src=&quot;https://unpkg.com/paperdocs@1/paperdocs.min.css&quot; rel=&quot;stylesheet&quot;&gt;
 &lt;script src=&quot;https://unpkg.com/paperdocs@1/paperdocs.min.js&quot;&gt;&lt;/script&gt;
@@ -11,15 +11,10 @@
 <li>Automatic markdown parsing from external file on demand</li>
 </ul>
 <h2 id="navigation-menu">Navigation menu</h2>
-<p>The <code>&lt;nav&gt;</code> navigation menu will automatically render as a drop-down menu on mobile (try it by resizing this window), so your users will have the functionality they want there.</p>
-<p>This is how it looks on desktop (cut to make it fit here):</p>
+<p>The <code>&lt;nav&gt;</code> will automatically render as a drop-down menu on mobile (try it by resizing this window), so your users will have the functionality they want there. This is how it looks <strong>on large screens</strong>:</p>
 <p><img src="img/nav_desktop.png" alt="Navigation menu on desktop"></p>
-<p>This is the mobile version. <strong>When you scroll on mobile the nav shows the current section</strong>:</p>
-<div class="flex two">
-  <div><img src="img/nav_mobile_full.png" alt="Mobile navigation bar"></div>
-  <div><img src="img/nav_mobile_scroll_full.png" alt="Mobile navigation bar scrolled"></div>
-</div>
-
+<p>And this is the mobile version. <strong>When you scroll on mobile the nav shows the current section</strong>:</p>
+<p><img src="img/nav_mobile_both.png" alt="Navigation on mobile including scrolled down"></p>
 <p>When clicking on the ☰, the menu drops down showing all available sections and the 2-4 buttons that were on the top-right before on the bottom:</p>
 <p><img src="img/nav_open_full.png" alt="Navigation on mobile opened"></p>
 <p>To get this awesome menu, use this html:</p>
@@ -52,11 +47,12 @@
 </code></pre>
 <p>There are a couple of things to note here:</p>
 <ul>
-<li>The first div inside <code>&lt;footer&gt;</code> has the class <code>flex three</code>. You must adjust this acording to the number of buttons you have inside.</li>
+<li>The first div inside <code>&lt;footer&gt;</code> has the class <code>flex three</code>. You must adjust this acording to the number of buttons that you have inside it.</li>
 <li>The <code>.menu.loading</code> has an attribute called <code>data-headers=&quot;h2&quot;</code>. This represents what kind of headings will be parsed and make it into the menu. You can adjust it to <code>data-headers=&quot;h1, h2&quot;</code>, <code>data-headers=&quot;h2, h3&quot;</code>, etc as you prefer.</li>
 </ul>
 <h2 id="single-column">Single column</h2>
-<p><a href="/single">See example</a> (or this page)</p>
+<p><a href="http://francisco.io/paperdocs/single"><strong>Live demo</strong></a>:</p>
+<p><a href="http://francisco.io/paperdocs/single"><img src="/img/single_column.png" alt="Single column layout"></a></p>
 <p>This is the current layout, a single column. The most important element is the <code>&lt;article&gt;</code>, to load a page like this do:</p>
 <pre><code class="lang-html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;

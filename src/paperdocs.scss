@@ -6,8 +6,6 @@ html, body {
   border: none;
   margin: 0;
   padding: 0;
-  transition: all .3s ease;
-
   font-size: 1.05em;
 }
 
@@ -193,6 +191,10 @@ aside ol .pseudo.button {
   text-align: left;
   padding: .3em;
   margin: 0 0 10px;
+}
+
+[data-headers] .from-h1 {
+  font-weight: bold;
 }
 
 .pseudo.button.active {
