@@ -21,18 +21,18 @@ The `<nav>` navigation menu will automatically render as a drop-down menu on mob
 
 This is how it looks on desktop (cut to make it fit here):
 
-![Navigation menu on desktop](/img/nav_desktop.png)
+![Navigation menu on desktop](img/nav_desktop.png)
 
 This is the mobile version. **When you scroll on mobile the nav shows the current section**:
 
 <div class="flex two">
-  <div><img src="/img/nav_mobile_full.png" alt="Mobile navigation bar"></div>
-  <div><img src="/img/nav_mobile_scroll_full.png" alt="Mobile navigation bar scrolled"></div>
+  <div><img src="img/nav_mobile_full.png" alt="Mobile navigation bar"></div>
+  <div><img src="img/nav_mobile_scroll_full.png" alt="Mobile navigation bar scrolled"></div>
 </div>
 
 When clicking on the ☰, the menu drops down showing all available sections and the 2-4 buttons that were on the top-right before on the bottom:
 
-![Navigation on mobile opened](/img/nav_open_full.png)
+![Navigation on mobile opened](img/nav_open_full.png)
 
 To get this awesome menu, use this html:
 
