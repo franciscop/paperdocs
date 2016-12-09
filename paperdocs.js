@@ -805,6 +805,8 @@ function ajax(a,b,c,d){c=c||function(){},b=b||{},b.body=b.body||{},b.method=(b.m
 'use strict';
 
 (function () {
+  u('html').removeClass('initial');
+
   var tableofcontents = function tableofcontents() {
 
     u('[data-headers]').each(function (header) {

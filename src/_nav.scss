@@ -1,0 +1,239 @@
+nav.super {
+
+  .brand {
+    padding: 0;
+
+    i.fa {
+      margin: 0 10px;
+    }
+
+    i.fa::before {
+      line-height: 1.5;
+      font-size: 1.2em;
+    }
+  }
+
+  .button.switch {
+    display: none;
+  }
+
+  header {
+    display: none;
+    height: 3em;
+    clear: both;
+    z-index: 100;
+    padding: 0 .6em 0 0;
+    height: 3em;
+    line-height: 3em;
+    font-size: 1em;
+
+    width: calc(100vw - 5em);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .menu {
+    display: none;
+    padding: .6em;
+  }
+
+  footer {
+    float: right;
+    position: static;
+    top: calc(100vh - 5em);
+    height: 3em;
+    padding: .45em 0;
+    white-space: nowrap;
+
+    .flex {
+      display: inline;
+    }
+
+    .button {
+      width: auto;
+      padding: .3em .9em;
+      margin: 0;
+      transition: box-shadow .3s ease;
+
+      i {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 900px) {
+  .no-scroll {
+    overflow-y: hidden;
+  }
+
+  nav.super header {
+    display: inline-block;
+  }
+
+  nav.super .brand .text {
+    display: none;
+  }
+
+  nav.super .button.switch {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 0;
+    height: 1.5em;
+    width: 1.5em;
+    line-height: 1.5em;
+    border-radius: 0;
+    font-size: 2em;
+    padding: 0;
+    color: #333;
+    transform: none;
+  }
+
+  nav.super .menu > .content,
+  nav.super footer {
+    margin: 0;
+    padding: 0;
+  }
+
+  nav.super .menu .button {
+    display: block;
+    text-align: left;
+    border-radius: 0;
+    margin: 0;
+    padding: .9em;
+  }
+
+  nav .burger ~ .menu > * {
+    display: flex;
+    margin: 0 0 0 -0.6em;
+  }
+
+  nav.super ul {
+    padding: 0;
+    list-style: none;
+  }
+
+  nav.super li {
+    margin: 0;
+  }
+
+  nav.super footer {
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    height: 0em;
+    top: calc(100vh - 5em);
+    display: block;
+    float: none;
+    transform: none;
+    transition: top .3s ease;
+  }
+
+  nav.super :checked ~ * footer {
+    height: 0em;
+  }
+
+  nav.super footer .flex {
+    display: flex;
+  }
+
+  nav.super footer .button {
+    width: 33.333%;
+    height: 15vh;
+    border-radius: 0;
+    margin: 0;
+    line-height: 1;
+    padding: 1em .3em;
+    background: #0074d9;
+    color: #fff;
+  }
+
+  nav.super footer .button span {
+    font-size: 0.8em;
+  }
+
+  nav.super footer .button i,
+  nav.super footer .button img {
+    display: block;
+    font-size: 2em;
+    height: 1em;
+    text-align: center;
+    margin: 0 auto 10px;
+  }
+
+
+  nav.super .switch::before {
+    content: '≡';
+  }
+
+  nav.super .show:checked ~ .switch::before {
+    content: '×';
+  }
+
+  nav.super .menu,
+  nav.super footer {
+    left: 0;
+    top: 100vh;
+    opacity: 1;
+    z-index: 1;
+    transform: scaleY(1);
+    pointer-events: all;
+    z-index: 100;
+  }
+
+
+
+  nav.super .menu {
+    background: #D0E2EC;
+    display: block;
+    top: 3em;
+    width: 100%;
+    height: 0;
+    padding: 0 .6em;
+    min-height: 0;
+    overflow: hidden;
+    border: 0;
+    box-shadow: 0 .1em .1em -.1em rgba(17, 17, 17, 0.2) inset;
+    transition: all .6s ease;
+  }
+
+  nav.super .menu .button {
+    background: #f5f5f5;
+    box-shadow: .1em .1em .1em rgba(17, 17, 17, 0.2);
+  }
+
+  nav.super .menu .button:hover {
+    color: #333;
+    background: #fff;
+    box-shadow: .1em .1em .2em rgba(17, 17, 17, 0.5);
+  }
+
+  nav.super .menu .button:active {
+    box-shadow: .1em .1em .3em rgba(17, 17, 17, 0.5) inset;
+  }
+
+  nav.super .menu .button.active {
+    box-shadow: .1em .1em .1em rgba(17, 17, 17, 0.3) inset;
+  }
+
+  nav.super .menu .button.active:hover {
+    box-shadow: .1em .1em .2em rgba(17, 17, 17, 0.5) inset;
+  }
+
+  nav.super .menu .button.active:active {
+    box-shadow: .1em .1em .2em rgba(17, 17, 17, 0.8) inset;
+  }
+
+  nav.super .show:checked ~ .menu {
+    width: 100%;  /* overwriting picnic */
+    height: calc(85vh - 3em);
+    padding: .6em;
+  }
+
+  nav.super .show:checked ~ footer {
+    top: calc(85vh);
+  }
+}

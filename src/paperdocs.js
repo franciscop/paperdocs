@@ -1,6 +1,8 @@
 'use strict';
 
 (function () {
+  u('html').removeClass('initial');
+
   var tableofcontents = function tableofcontents() {
 
     u('[data-headers]').each(function (header) {

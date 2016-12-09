@@ -2,7 +2,7 @@
   "name": "paperdocs",
   "version": "1.0.0",
   "description": "A beautiful and highly responsive template for documentation",
-  "main": "paperdocs.js",
+  "main": "paperdocs.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
