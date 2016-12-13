@@ -3,7 +3,7 @@
 A beautiful and highly responsible theme for documentation:
 
 ```html
-<link src="https://unpkg.com/paperdocs@1/paperdocs.min.css" rel="stylesheet">
+<link href="https://unpkg.com/paperdocs@1/paperdocs.min.css" rel="stylesheet">
 <script src="https://unpkg.com/paperdocs@1/paperdocs.min.js"></script>
 ```
 
