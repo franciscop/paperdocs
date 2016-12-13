@@ -1,6 +1,6 @@
 {
   "name": "paperdocs",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A beautiful and highly responsive template for documentation",
   "main": "paperdocs.min.js",
   "scripts": {
