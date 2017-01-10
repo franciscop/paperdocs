@@ -87,6 +87,7 @@ module.exports = function (grunt) {
         },
         files: {
           'paperdocs.js': [
+            './node_modules/whatwg-fetch/fetch.js',
             './node_modules/prismjs/prism.js',
             './node_modules/umbrellajs/umbrella.min.js',
             './node_modules/marked/marked.min.js',

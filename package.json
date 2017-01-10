@@ -1,6 +1,6 @@
 {
   "name": "paperdocs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A beautiful and highly responsive template for documentation",
   "main": "paperdocs.min.js",
   "scripts": {
@@ -24,5 +24,10 @@
     "prismjs": "^1.6.0",
     "superdom": "^0.10.1",
     "umbrellajs": "^2.6.7"
+  },
+  "dependencies": {
+    "install": "^0.8.4",
+    "npm": "^4.0.5",
+    "whatwg-fetch": "^2.0.1"
   }
 }
