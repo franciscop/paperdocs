@@ -1,6 +1,6 @@
 # Paperdocs
 
-A beautiful and highly responsible theme for documentation:
+A beautiful and highly responsive theme for documentation:
 
 ```html
 <link href="https://unpkg.com/paperdocs@1/paperdocs.min.css" rel="stylesheet">
