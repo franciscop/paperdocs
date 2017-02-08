@@ -41,9 +41,8 @@
       if (smoothscroll) {
         e.preventDefault();
         var to = u(u(e.currentTarget).attr('href'));
-        if (to.length) {
-          to.scroll();
-        }
+        if (!to.length) to = u(document.body);
+        to.scroll();
       }
     });
 
@@ -56,7 +55,7 @@
       }).last();
       var section = u(current).html();
       if (!last || !current || current != last) {
-        last = current || '#';
+        last = current;
         u('nav header').html(section);
         u('[data-headers] [href]').removeClass('active');
         if (current) {
