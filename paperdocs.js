@@ -1319,7 +1319,7 @@ function ajax(a,b,c,d){c=c||function(){},b=b||{},b.body=b.body||{},b.method=(b.m
       }).last();
       var section = u(current).html();
       if (!last || !current || current != last) {
-        last = current;
+        last = current || '#';
         u('nav header').html(section);
         u('[data-headers] [href]').removeClass('active');
         if (current) {

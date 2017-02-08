@@ -56,7 +56,7 @@
       }).last();
       var section = u(current).html();
       if (!last || !current || current != last) {
-        last = current;
+        last = current || '#';
         u('nav header').html(section);
         u('[data-headers] [href]').removeClass('active');
         if (current) {
