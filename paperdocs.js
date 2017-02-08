@@ -1303,7 +1303,8 @@ function ajax(a,b,c,d){c=c||function(){},b=b||{},b.body=b.body||{},b.method=(b.m
 
       if (smoothscroll) {
         e.preventDefault();
-        var to = u(u(e.currentTarget).attr('href'));
+        var href = u(e.currentTarget).attr('href');
+        var to = href && href !== '#' ? u(href) : u(document.body);
         if (!to.length) to = u(document.body);
         to.scroll();
       }
