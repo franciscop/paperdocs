@@ -240,6 +240,10 @@ nav.super {
       padding: .6em;
     }
 
+    .burger ~ .menu > * {
+      margin-left: -$picnic-separation;
+    }
+
     .show:checked ~ footer {
       top: calc(85vh);
     }
