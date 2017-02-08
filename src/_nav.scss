@@ -137,6 +137,10 @@ nav.super {
       display: block;
       float: none;
       transform: none;
+      transition: none
+    }
+
+    .show:checked ~ footer {
       transition: top .3s ease;
     }
 
