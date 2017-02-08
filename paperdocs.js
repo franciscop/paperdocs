@@ -1314,7 +1314,7 @@ function ajax(a,b,c,d){c=c||function(){},b=b||{},b.body=b.body||{},b.method=(b.m
     var pagesize = u('body').size().height / 2;
     var last;
     function setupSection() {
-      var current = u('article h1, article h2, article h3').filter(function (node) {
+      var current = u('h1, h2, h3').filter(function (node) {
         return u(node).size().top < pagesize;
       }).last();
       var section = u(current).html();
